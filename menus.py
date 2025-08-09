@@ -1,6 +1,3 @@
-from operations import *
-
-
 class Menu:
     def __init__(self, text, commands):
         # text prompt (string), possible inputs (list of strings)
@@ -43,3 +40,6 @@ loot_generator = Menu(
     "Welcome to the loot generator! Please enter one of the following commands: 'any', 'common', 'uncommon', 'rare', 'legendary', 'back'.",
     ["any", "common", "uncommon", "rare", "back"]
 )
+
+
+from operations import *
