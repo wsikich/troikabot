@@ -45,7 +45,7 @@ npc = Menu(
 )
 
 pc = Menu(
-    "Welcome to the PC generator! Please enter one of the following commands: 'complete', 'mood', 'tag', 'species', 'stats', 'spellbook', 'back'.",
+    "Welcome to the PC generator! Please enter one of the following commands: 'complete', 'stats', 'background', 'back'",
     {}
 )
 
