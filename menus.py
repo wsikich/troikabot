@@ -4,6 +4,7 @@ from operations import *
 
 
 # define Menu class:
+
 class Menu:
     def __init__(self, text, commands):
         # text prompt (string), possible inputs (list of strings)
@@ -32,18 +33,24 @@ class Menu:
 
 
 # menu objects:
+
 home = Menu(
     "Welcome to Troikabot! Please enter one of the following commands to navigate to the desired menu: 'initiative','pc', 'npc', 'loot', 'world', 'quit'",
     {}
 )
 
 npc = Menu(
-    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'background', 'stats', 'back'.",
+    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'background', 'stats', 'color', 'back'.",
     {}
 )
 
 pc = Menu(
     "Welcome to the PC generator! Please enter one of the following commands: 'complete', 'mood', 'tag', 'species', 'stats', 'spellbook', 'back'.",
+    {}
+)
+
+npc_species = Menu(
+    "Welcome to the species generator! Please enter one of the following commands: 'any', 'animal', 'fantasy'",
     {}
 )
 
@@ -64,6 +71,7 @@ world = Menu(
 
 
 # command lists:
+
 home_commands = {
     "initiative": initiative,
     "pc": pc,
@@ -87,6 +95,14 @@ npc_commands = {
     "species": npc_species,
     "stats": npc_stats,
     "spellbook": npc_spellbook,
+    "color": npc_color,
+    "back": home
+}
+
+species_commands = {
+    "any": npc_any_species,
+    "animal": npc_animal_species,
+    "fantasy": npc_fantasy_species,
     "back": home
 }
 
@@ -115,6 +131,7 @@ world_commands = {
 home.commands = home_commands
 npc.commands = npc_commands
 pc.commands = pc_commands
+npc_species.commands = species_commands
 initiative.commands = initiative_commands
 loot.commands = loot_commands
 world.commands = world_commands

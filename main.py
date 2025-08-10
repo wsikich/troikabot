@@ -12,6 +12,7 @@ def main():
         current_menu.prompt_input()
         next_menu = current_menu.execute_input()
         current_menu = next_menu
+        print("")
     
 
 if __name__ == "__main__":
