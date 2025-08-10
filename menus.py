@@ -1,45 +1,120 @@
+import sys
+
+from operations import *
+
+
+# define Menu class:
 class Menu:
     def __init__(self, text, commands):
         # text prompt (string), possible inputs (list of strings)
         self.text = text
         self.commands = commands
+        self.input = None
     
     def print_text(self):
         print(self.text)
 
-    
     def prompt_input(self):
         user_input = input("Enter a command: ")
-        for command in self.commands:
-            if user_input == command:
-                return command
-        raise Exception("Unknown command")
+        self.input = user_input
+    
+    def execute_input(self):
+        input_object = self.commands.get(self.input)
+        if input_object and isinstance(input_object, Menu):
+            return input_object
+        elif input_object == sys.exit:
+            input_object()  # Call sys.exit() to exit the program
+        elif input_object:
+            print(input_object.initiate())
+        else:
+            print("Invalid command.")
+        return self
 
 
-main_menu = Menu(
+# menu objects:
+home = Menu(
     "Welcome to Troikabot! Please enter one of the following commands to navigate to the desired menu: 'initiative','pc', 'npc', 'loot', 'world', 'quit'",
-    ["initiative", "pc", "npc", "loot", "world", "quit"]
+    {}
 )
 
-npc_generator = Menu(
-    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'background', 'stats', 'back'.", 
-    ["complete", "background", "stats", "back"]
+npc = Menu(
+    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'background', 'stats', 'back'.",
+    {}
 )
 
-pc_generator = Menu(
+pc = Menu(
     "Welcome to the PC generator! Please enter one of the following commands: 'complete', 'mood', 'tag', 'species', 'stats', 'spellbook', 'back'.",
-    ["complete", "mood", "tag", "species", "stats", "spellbook", "back"]
+    {}
 )
 
-initiative_tracker = Menu(
+initiative = Menu(
     "Welcome to the initiative tracker! please enter one of the following commands: 'start', 'back'.",
-    ["start", "back"]
+    {}
 )
 
-loot_generator = Menu(
+loot = Menu(
     "Welcome to the loot generator! Please enter one of the following commands: 'any', 'common', 'uncommon', 'rare', 'legendary', 'back'.",
-    ["any", "common", "uncommon", "rare", "back"]
+    {}
+)
+
+world = Menu(
+    "Welcome to the world generator! Please enter one of the following commands: 'biome', 'building', 'location', 'back'.",
+    {}
 )
 
 
-from operations import *
+# command lists:
+home_commands = {
+    "initiative": initiative,
+    "pc": pc,
+    "npc": npc,
+    "loot": loot,
+    "world": world,
+    "quit": sys.exit
+}
+
+pc_commands = {
+    "complete": pc_complete,
+    "background": pc_background,
+    "stats": pc_stats,
+    "back": home
+}
+
+npc_commands = {
+    "complete": npc_complete,
+    "mood": npc_mood,
+    "tag": npc_tag,
+    "species": npc_species,
+    "stats": npc_stats,
+    "spellbook": npc_spellbook,
+    "back": home
+}
+
+initiative_commands = {
+    "start": initiative_start,
+    "back": home
+}
+
+loot_commands = {
+    "any": loot_any,
+    "common": loot_common,
+    "uncommon": loot_uncommon,
+    "rare": loot_rare,
+    "legendary": loot_legendary,
+    "back": home
+}
+    
+world_commands = {
+    "biome": world_biome,
+    "building": world_building,
+    "location": world_location,
+    "back": home
+}
+# linking menus to their command lists:
+
+home.commands = home_commands
+npc.commands = npc_commands
+pc.commands = pc_commands
+initiative.commands = initiative_commands
+loot.commands = loot_commands
+world.commands = world_commands
