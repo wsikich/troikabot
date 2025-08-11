@@ -1,0 +1,19 @@
+icecap
+tundra
+taiga
+rainforest
+temperate forest
+temperate plains
+desert
+savanna
+ocean
+archipelago
+underground
+lava
+swamp
+marsh
+digital
+bog
+barren
+floating islands
+mountains
