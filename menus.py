@@ -65,7 +65,7 @@ loot = Menu(
 )
 
 world = Menu(
-    "Welcome to the world generator! Please enter one of the following commands: 'complete', 'biome', 'aesthetic', 'species', 'building', 'location', 'back'.",
+    "Welcome to the world generator! Please enter one of the following commands: 'complete', 'biome', 'tag', 'aesthetic', 'species', 'building', 'location', 'back'.",
     {}
 )
 
@@ -128,6 +128,7 @@ world_commands = {
     "aesthetic": world_aesthetic,
     "location": world_location,
     "species": npc_any_species,
+    "tag": npc_tag,
     "back": home
 }
 # linking menus to their command lists:
