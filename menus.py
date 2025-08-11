@@ -40,12 +40,12 @@ home = Menu(
 )
 
 npc = Menu(
-    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'background', 'stats', 'color', 'back'.",
+    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'spellbook', 'background', 'stats', 'color', 'back'.",
     {}
 )
 
 pc = Menu(
-    "Welcome to the PC generator! Please enter one of the following commands: 'complete', 'stats', 'background', 'back'",
+    "Welcome to the PC generator! Please enter one of the following commands: 'complete', 'stats', 'spell', 'background', 'back'",
     {}
 )
 
@@ -85,6 +85,7 @@ pc_commands = {
     "complete": pc_complete,
     "background": pc_background,
     "stats": pc_stats,
+    "spell": pc_spell,
     "back": home
 }
 

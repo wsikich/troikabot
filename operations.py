@@ -28,7 +28,7 @@ class PCComplete(Operation):
     def initiate(self):
         background = pc_background.initiate()
         stats = pc_stats.initiate()
-        print({"background": background, "stats": stats})
+        return f"Background: {background} | Stats: {stats}"
 
 
 class NPCComplete(Operation):
@@ -40,8 +40,12 @@ class NPCComplete(Operation):
         tag = npc_tag.initiate()
         species = npc_any_species.initiate()
         stats = npc_stats.initiate()
-        spellbook = npc_spellbook.initiate()
-        print({"mood": mood, "tag": tag, "species": species, "stats": stats, "spellbook": spellbook})
+        has_spells = random.randint(1, 3)
+        if has_spells == 1:
+            spellbook = npc_spellbook.initiate()
+        else: 
+            spellbook = None
+        return f"Mood: {mood} | Tag: {tag} | Species: {species} | Stats: {stats} | Spellbook: {spellbook}"
 
 
 class Stats(Operation):
@@ -52,8 +56,9 @@ class Stats(Operation):
         skill = random.randint(1, 3) + 3
         stamina = random.randint(1, 6) + random.randint(1, 6) + 12
         luck = random.randint(1, 6) + 6
-        return {"skill": skill, "stamina": stamina, "luck": luck}
+        return f"skill: {skill} stamina: {stamina} luck: {luck}"
     
+
 class AnySpeciesGenerator(Operation):
     def __init__(self):
         super().__init__()
@@ -66,6 +71,22 @@ class AnySpeciesGenerator(Operation):
         else:
             species = npc_fantasy_species.initiate()
         return species
+    
+
+class SpellbookGenerator(Operation):
+    def __init__(self, outcomes):
+        super().__init__()
+        self.outcomes = outcomes
+    def initiate(self):
+        spell_list = []
+        spell_count = random.randint(1, 6)
+        while spell_count > 0:
+            result_index = random.randint(0, (len(self.outcomes) - 1))
+            result = self.outcomes[result_index]
+            if result not in spell_list:
+                spell_list.append(result)
+                spell_count -= 1
+        return spell_list
 
 #class InitiativeTracker(Operation):
     #def __init__(self):
@@ -79,6 +100,9 @@ pc_background_outcomes = []
 npc_color_outcomes = []
 npc_animal_species_outcomes = []
 npc_fantasy_species_outcomes = []
+npc_mood_outcomes = []
+npc_tag_outcomes = []
+npc_spellbook_outcomes = []
 
 
 # Fill outcome lists from files
@@ -93,21 +117,25 @@ fill_outcome_list(pc_background_outcomes, 'backgrounds.txt')
 fill_outcome_list(npc_color_outcomes, 'colors.txt')
 fill_outcome_list(npc_animal_species_outcomes, 'animal_species.txt')
 fill_outcome_list(npc_fantasy_species_outcomes, 'fantasy_species.txt')
+fill_outcome_list(npc_mood_outcomes, 'moods.txt')
+fill_outcome_list(npc_tag_outcomes, 'tags.txt')
+fill_outcome_list(npc_spellbook_outcomes, 'spells.txt')
 
 
 # List of generators and operations:
 pc_complete = PCComplete()
 pc_background = Generator(pc_background_outcomes)
 pc_stats = Stats()
+pc_spell = Generator(npc_spellbook_outcomes)
 
 npc_complete = NPCComplete()
-npc_mood = Generator([])
-npc_tag = Generator([])
+npc_mood = Generator(npc_mood_outcomes)
+npc_tag = Generator(npc_tag_outcomes)
 npc_any_species = AnySpeciesGenerator()
 npc_animal_species = Generator(npc_animal_species_outcomes)
 npc_fantasy_species = Generator(npc_fantasy_species_outcomes)
 npc_stats = Stats()
-npc_spellbook = Generator([])
+npc_spellbook = SpellbookGenerator(npc_spellbook_outcomes)
 npc_color = Generator(npc_color_outcomes)
 
 initiative_start = None  # Placeholder for initiative start operation

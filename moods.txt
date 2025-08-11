@@ -1,0 +1,30 @@
+friendly
+rude
+angry
+annoyed
+sad
+asleep
+impatient
+excited
+afraid
+distracted
+panicked
+lethargic
+injured
+needy
+under the influence
+busy
+irritable
+in despair
+waiting
+indecisive
+humiliated
+happy
+content
+hungry
+thirsty
+in love
+flirty
+dead
+in pain
+enchanted

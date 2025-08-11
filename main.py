@@ -9,7 +9,9 @@ def main():
     global current_menu
     while True:
         current_menu.print_text()
+        print("")
         current_menu.prompt_input()
+        print("")
         next_menu = current_menu.execute_input()
         current_menu = next_menu
         print("")
