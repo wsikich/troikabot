@@ -140,6 +140,8 @@ npc_spellbook_outcomes = []
 world_biome_outcomes = []
 world_government_outcomes = []
 world_aesthetic_outcomes = []
+world_building_outcomes = []
+world_location_outcomes = []
 
 
 # Fill outcome lists from files
@@ -162,6 +164,8 @@ fill_outcome_list(npc_spellbook_outcomes, 'spells.txt')
 fill_outcome_list(world_biome_outcomes, 'biomes.txt')
 fill_outcome_list(world_government_outcomes, 'governments.txt')
 fill_outcome_list(world_aesthetic_outcomes, 'aesthetics.txt')
+fill_outcome_list(world_building_outcomes, 'buildings.txt')
+fill_outcome_list(world_location_outcomes, 'locations.txt')
 
 # List of generators and operations:
 pc_complete = PCComplete()
@@ -190,6 +194,6 @@ loot_legendary = Generator([])
 world_complete = CompleteWorldGenerator()
 world_biome = Generator(world_biome_outcomes)
 world_government = Generator(world_government_outcomes)
-world_building = Generator([])
-world_location = Generator([])
+world_building = Generator(world_building_outcomes)
+world_location = Generator(world_location_outcomes)
 world_aesthetic = Generator(world_aesthetic_outcomes)

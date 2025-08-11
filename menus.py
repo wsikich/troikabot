@@ -40,7 +40,7 @@ home = Menu(
 )
 
 npc = Menu(
-    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'spellbook', 'background', 'stats', 'color', 'back'.",
+    "Welcome to the NPC generator! Please enter one of the following commands: 'complete', 'spellbook', 'species', 'background', 'stats', 'color', 'back'.",
     {}
 )
 

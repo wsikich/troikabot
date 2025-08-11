@@ -1,0 +1,144 @@
+golden barge station
+warehouse
+factory
+farm
+dock
+observatory
+palace
+castle
+magic items shop
+bakery
+general goods store
+bookstore
+grocer
+pet store
+herbalist
+potion shop
+exotic goods
+jeweler
+bunkhouse
+carpenter
+stables
+armor and weapons shop
+hatter
+butchery
+clothing store
+blacksmith
+barber
+thrift store
+liquor store
+tavern
+craft store
+music shop
+salon/spa
+cartographer
+spice shop
+bath house
+casino
+animal supplies
+occult store
+artists’ guild
+winery
+brewery
+distillery
+flower shop
+cobbler
+tinkerer
+weaver
+scribe
+hunters’ guild
+fishermen’s guild
+veterinarian
+thieves’ guild
+black market
+brothel
+bank
+glass blower
+leatherworker
+doctor/cleric/physician
+merchants’ guild
+barracks
+school
+scholars’ guild
+daycare
+museum
+library
+lawyer’s office
+writers’ guild
+adventurers’ guild
+mages’ guild
+bards’ guild
+tin worker
+indoor market
+nightclub
+city hall
+temple
+fish market
+nunnery
+tailor/seam
+prison
+city guard
+event hall
+architects’ guild
+sailors’ guild
+orphanage
+enchanter
+post office
+inn
+mill
+smokehouse
+game shop
+theater
+witch
+college
+printing press
+animal pound
+event planner
+costume shop
+toy shop
+mortician
+restaurant
+tanner
+knights’ guild
+registry
+trade post
+vehicle maker
+archive
+fortune teller
+matchmaker
+cloning facility
+nanotech facility
+animal hatchery
+carbuncular hatchery
+chronomancer's tower
+xenobotanical conservatory
+solar farm
+gas farm
+alien embassy
+holocenter
+portal house
+xenozoological conservatory
+robot factory
+cybernetics facility
+deep fishery
+necromancer's tower
+nuclear facility
+grand hotel
+tattoo parlor
+teleportation station
+psionics training facility
+pyromancer's tower
+gravity well
+cyberhacking facility
+haunted house
+abandoned castle
+rookery
+biodome
+bioengineering facility
+crystal synthesis facility
+demon chamber
+cathedral
+ranch
+arts college
+virtual reality chamber
+drone center

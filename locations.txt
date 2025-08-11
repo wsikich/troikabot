@@ -1,0 +1,15 @@
+town
+city
+village
+underground city
+outpost
+military camp
+underground bunker
+seaside town
+seaside city
+floating city
+transportation hub
+mining camp
+farm
+ranch
+scientific outpost
